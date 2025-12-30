@@ -1,0 +1,1946 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>مسابقة القرآن الكريم | المشاركة مجانية</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="مسابقة دولية لتلاوة القرآن الكريم - فرصة للظهور والإبداع">
+    <meta name="theme-color" content="#0c1924">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&family=Amiri:wght@400;700&family=El+Messiri:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+    @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&family=Amiri:wght@400;700&family=El+Messiri:wght@400;500;600;700&display=swap');
+
+    :root {
+        --primary: #0c1924;
+        --secondary: #132639;
+        --accent: #d4af37;
+        --accent-light: #f4e4a6;
+        --emerald: #1abc9c;
+        --emerald-dark: #16a085;
+        --text: #f8f9fa;
+        --text-secondary: #b8c2cc;
+        --gradient: linear-gradient(135deg, #d4af37 0%, #f7ef8a 100%);
+        --gradient-dark: linear-gradient(135deg, #0c1924 0%, #132639 100%);
+        --shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+        --shadow-light: 0 5px 20px rgba(212, 175, 55, 0.2);
+        --transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    html {
+        scroll-behavior: smooth;
+        font-size: 16px;
+    }
+
+    body {
+        font-family: 'Cairo', 'Amiri', sans-serif;
+        background: var(--primary);
+        color: var(--text);
+        line-height: 1.8;
+        overflow-x: hidden;
+        position: relative;
+    }
+
+    body::before {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: 
+            radial-gradient(circle at 20% 50%, rgba(26, 188, 156, 0.08) 0%, transparent 50%),
+            radial-gradient(circle at 80% 20%, rgba(212, 175, 55, 0.05) 0%, transparent 50%);
+        z-index: -2;
+        animation: pulseBackground 15s ease-in-out infinite;
+    }
+
+    @keyframes pulseBackground {
+        0%, 100% { opacity: 1; }
+        50% { opacity: 0.8; }
+    }
+
+    /* Floating Particles */
+    .particles {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        z-index: -1;
+    }
+
+    .particle {
+        position: absolute;
+        background: radial-gradient(circle, var(--accent) 0%, transparent 70%);
+        border-radius: 50%;
+        opacity: 0.3;
+        animation: floatParticle linear infinite;
+    }
+
+    @keyframes floatParticle {
+        0% {
+            transform: translateY(100vh) rotate(0deg);
+            opacity: 0;
+        }
+        10% {
+            opacity: 0.3;
+        }
+        90% {
+            opacity: 0.3;
+        }
+        100% {
+            transform: translateY(-100px) rotate(360deg);
+            opacity: 0;
+        }
+    }
+
+    /* Header */
+    header {
+        background: rgba(12, 25, 36, 0.95);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+        position: fixed;
+        width: 100%;
+        top: 0;
+        z-index: 1000;
+        padding: 1rem 0;
+        transition: var(--transition);
+        animation: slideDown 0.8s ease-out;
+    }
+
+    @keyframes slideDown {
+        from {
+            transform: translateY(-100%);
+            opacity: 0;
+        }
+        to {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+
+    header.scrolled {
+        padding: 0.5rem 0;
+        box-shadow: var(--shadow);
+    }
+
+    .container {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 0 2rem;
+    }
+
+    .nav-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .logo {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        text-decoration: none;
+        animation: logoGlow 3s ease-in-out infinite;
+    }
+
+    @keyframes logoGlow {
+        0%, 100% { filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.3)); }
+        50% { filter: drop-shadow(0 0 20px rgba(212, 175, 55, 0.5)); }
+    }
+
+    .logo-icon {
+        font-size: 2.5rem;
+        color: var(--accent);
+        transform-origin: center;
+        animation: rotateMoon 20s linear infinite;
+    }
+
+    @keyframes rotateMoon {
+        from { transform: rotate(0deg); }
+        to { transform: rotate(360deg); }
+    }
+
+    .logo-text {
+        font-family: 'El Messiri', sans-serif;
+        font-size: 1.8rem;
+        font-weight: 700;
+        background: var(--gradient);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        letter-spacing: -0.5px;
+    }
+
+    .nav-links {
+        display: flex;
+        gap: 2rem;
+        list-style: none;
+    }
+
+    .nav-links li {
+        position: relative;
+    }
+
+    .nav-links a {
+        color: var(--text);
+        text-decoration: none;
+        font-weight: 600;
+        padding: 0.5rem 1rem;
+        border-radius: 50px;
+        transition: var(--transition);
+        position: relative;
+        overflow: hidden;
+    }
+
+    .nav-links a::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: var(--gradient);
+        opacity: 0;
+        transition: var(--transition);
+        z-index: -1;
+        border-radius: 50px;
+    }
+
+    .nav-links a:hover {
+        color: #000;
+        transform: translateY(-2px);
+    }
+
+    .nav-links a:hover::before {
+        opacity: 1;
+    }
+
+    .nav-links a.active {
+        background: var(--gradient);
+        color: #000;
+        box-shadow: var(--shadow-light);
+    }
+
+    /* Hero Section */
+    .hero {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        position: relative;
+        overflow: hidden;
+        padding: 6rem 0;
+    }
+
+    .hero-content {
+        position: relative;
+        z-index: 2;
+        text-align: center;
+        max-width: 900px;
+        margin: 0 auto;
+    }
+
+    .hero-title {
+        font-family: 'El Messiri', sans-serif;
+        font-size: 4rem;
+        font-weight: 800;
+        margin-bottom: 1.5rem;
+        background: linear-gradient(135deg, var(--accent) 0%, var(--accent-light) 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        animation: titleGlow 3s ease-in-out infinite;
+        line-height: 1.2;
+    }
+
+    @keyframes titleGlow {
+        0%, 100% { 
+            text-shadow: 0 0 30px rgba(212, 175, 55, 0.3);
+        }
+        50% { 
+            text-shadow: 0 0 60px rgba(212, 175, 55, 0.5);
+        }
+    }
+
+    .hero-subtitle {
+        font-size: 1.3rem;
+        color: var(--text-secondary);
+        margin-bottom: 3rem;
+        animation: fadeInUp 1s ease 0.3s both;
+    }
+
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .cta-buttons {
+        display: flex;
+        gap: 1.5rem;
+        justify-content: center;
+        margin-top: 3rem;
+        animation: fadeInUp 1s ease 0.6s both;
+    }
+
+    .btn {
+        padding: 1.2rem 2.5rem;
+        border-radius: 50px;
+        font-weight: 700;
+        font-size: 1.1rem;
+        text-decoration: none;
+        transition: var(--transition);
+        position: relative;
+        overflow: hidden;
+        border: none;
+        cursor: pointer;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.8rem;
+        letter-spacing: 0.5px;
+    }
+
+    .btn-primary {
+        background: var(--gradient);
+        color: #000;
+        box-shadow: 0 10px 30px rgba(212, 175, 55, 0.3);
+    }
+
+    .btn-primary:hover {
+        transform: translateY(-5px) scale(1.05);
+        box-shadow: 0 15px 40px rgba(212, 175, 55, 0.4);
+    }
+
+    .btn-secondary {
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        color: var(--text);
+        border: 2px solid rgba(212, 175, 55, 0.3);
+    }
+
+    .btn-secondary:hover {
+        background: rgba(212, 175, 55, 0.1);
+        border-color: var(--accent);
+        transform: translateY(-3px);
+    }
+
+    /* Quran Verse */
+    .quran-section {
+        padding: 6rem 0;
+        background: linear-gradient(180deg, var(--primary) 0%, var(--secondary) 100%);
+        position: relative;
+        overflow: hidden;
+    }
+
+    .quran-verse {
+        position: relative;
+        max-width: 900px;
+        margin: 0 auto;
+        text-align: center;
+        padding: 4rem 2rem;
+        background: rgba(255, 255, 255, 0.03);
+        border-radius: 30px;
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(212, 175, 55, 0.1);
+        overflow: hidden;
+        animation: verseFloat 6s ease-in-out infinite;
+    }
+
+    @keyframes verseFloat {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-15px); }
+    }
+
+    .quran-verse::before {
+        content: '﴿';
+        position: absolute;
+        top: 2rem;
+        right: 3rem;
+        font-family: 'Amiri', serif;
+        font-size: 5rem;
+        color: var(--accent);
+        opacity: 0.1;
+        animation: rotateSlow 30s linear infinite;
+    }
+
+    .quran-verse::after {
+        content: '﴾';
+        position: absolute;
+        bottom: 2rem;
+        left: 3rem;
+        font-family: 'Amiri', serif;
+        font-size: 5rem;
+        color: var(--accent);
+        opacity: 0.1;
+        animation: rotateSlow 30s linear infinite reverse;
+    }
+
+    @keyframes rotateSlow {
+        from { transform: rotate(0deg); }
+        to { transform: rotate(360deg); }
+    }
+
+    .verse-text {
+        font-family: 'Amiri', serif;
+        font-size: 2.5rem;
+        color: var(--accent-light);
+        line-height: 1.8;
+        margin-bottom: 1.5rem;
+        position: relative;
+        z-index: 1;
+        animation: textShine 3s ease-in-out infinite;
+    }
+
+    @keyframes textShine {
+        0%, 100% { 
+            text-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
+        }
+        50% { 
+            text-shadow: 0 0 40px rgba(212, 175, 55, 0.6);
+        }
+    }
+
+    .verse-reference {
+        font-family: 'Amiri', serif;
+        font-size: 1.3rem;
+        color: var(--text-secondary);
+        font-style: italic;
+    }
+
+    /* Sections */
+    .section {
+        padding: 6rem 0;
+        position: relative;
+    }
+
+    .section-title {
+        font-family: 'El Messiri', sans-serif;
+        font-size: 3rem;
+        text-align: center;
+        margin-bottom: 4rem;
+        position: relative;
+        display: inline-block;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .section-title::after {
+        content: '';
+        position: absolute;
+        bottom: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100px;
+        height: 4px;
+        background: var(--gradient);
+        border-radius: 2px;
+        animation: widthPulse 2s ease-in-out infinite;
+    }
+
+    @keyframes widthPulse {
+        0%, 100% { width: 100px; }
+        50% { width: 150px; }
+    }
+
+    /* Cards */
+    .card-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: 2.5rem;
+        margin-top: 3rem;
+    }
+
+    .card {
+        background: rgba(255, 255, 255, 0.03);
+        border-radius: 25px;
+        padding: 2.5rem;
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(212, 175, 55, 0.1);
+        transition: var(--transition);
+        position: relative;
+        overflow: hidden;
+        opacity: 0;
+        transform: translateY(30px);
+        animation: cardAppear 0.8s ease forwards;
+    }
+
+    @keyframes cardAppear {
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .card:nth-child(2) { animation-delay: 0.2s; }
+    .card:nth-child(3) { animation-delay: 0.4s; }
+    .card:nth-child(4) { animation-delay: 0.6s; }
+
+    .card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 5px;
+        background: var(--gradient);
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform 0.6s ease;
+    }
+
+    .card:hover::before {
+        transform: scaleX(1);
+    }
+
+    .card:hover {
+        transform: translateY(-15px) scale(1.02);
+        border-color: rgba(212, 175, 55, 0.3);
+        box-shadow: var(--shadow);
+    }
+
+    .card-icon {
+        font-size: 3rem;
+        color: var(--accent);
+        margin-bottom: 1.5rem;
+        display: inline-block;
+        animation: iconFloat 3s ease-in-out infinite;
+    }
+
+    @keyframes iconFloat {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-10px); }
+    }
+
+    .card h3 {
+        font-size: 1.8rem;
+        margin-bottom: 1rem;
+        color: var(--accent-light);
+    }
+
+    /* Rules List */
+    .rules-list {
+        list-style: none;
+        margin-top: 2rem;
+    }
+
+    .rules-list li {
+        padding: 1.2rem 0;
+        padding-right: 3rem;
+        position: relative;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        transition: var(--transition);
+        animation: slideInRight 0.5s ease forwards;
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+
+    @keyframes slideInRight {
+        to {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+
+    .rules-list li:nth-child(1) { animation-delay: 0.1s; }
+    .rules-list li:nth-child(2) { animation-delay: 0.2s; }
+    .rules-list li:nth-child(3) { animation-delay: 0.3s; }
+    .rules-list li:nth-child(4) { animation-delay: 0.4s; }
+    .rules-list li:nth-child(5) { animation-delay: 0.5s; }
+    .rules-list li:nth-child(6) { animation-delay: 0.6s; }
+    .rules-list li:nth-child(7) { animation-delay: 0.7s; }
+
+    .rules-list li:hover {
+        padding-right: 3.5rem;
+        color: var(--accent-light);
+    }
+
+    .rules-list li::before {
+        content: '✦';
+        position: absolute;
+        right: 0;
+        color: var(--emerald);
+        font-size: 1.2rem;
+        transition: var(--transition);
+    }
+
+    .rules-list li:hover::before {
+        transform: scale(1.5) rotate(180deg);
+        color: var(--accent);
+    }
+
+    /* Form Styles */
+    .form-section {
+        background: linear-gradient(180deg, var(--secondary) 0%, var(--primary) 100%);
+        padding: 6rem 0;
+        position: relative;
+    }
+
+    .form-container {
+        max-width: 900px;
+        margin: 0 auto;
+        background: rgba(255, 255, 255, 0.03);
+        border-radius: 30px;
+        padding: 3rem;
+        backdrop-filter: blur(20px);
+        border: 1px solid rgba(212, 175, 55, 0.1);
+        box-shadow: var(--shadow);
+        animation: formFloat 4s ease-in-out infinite;
+    }
+
+    @keyframes formFloat {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-10px); }
+    }
+
+    .form-group {
+        margin-bottom: 2rem;
+        animation: formGroupAppear 0.6s ease forwards;
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    @keyframes formGroupAppear {
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .form-group:nth-child(1) { animation-delay: 0.1s; }
+    .form-group:nth-child(2) { animation-delay: 0.2s; }
+    .form-group:nth-child(3) { animation-delay: 0.3s; }
+    .form-group:nth-child(4) { animation-delay: 0.4s; }
+    .form-group:nth-child(5) { animation-delay: 0.5s; }
+
+    .form-group label {
+        display: block;
+        margin-bottom: 0.8rem;
+        color: var(--accent-light);
+        font-weight: 600;
+        font-size: 1.1rem;
+        display: flex;
+        align-items: center;
+        gap: 0.8rem;
+    }
+
+    .form-control {
+        width: 100%;
+        padding: 1.2rem 1.5rem;
+        background: rgba(255, 255, 255, 0.05);
+        border: 2px solid rgba(255, 255, 255, 0.1);
+        border-radius: 15px;
+        color: var(--text);
+        font-family: 'Cairo', sans-serif;
+        font-size: 1rem;
+        transition: var(--transition);
+    }
+
+    .form-control:focus {
+        outline: none;
+        border-color: var(--accent);
+        box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.1);
+        background: rgba(255, 255, 255, 0.08);
+        transform: translateY(-2px);
+    }
+
+    /* File Upload */
+    .file-upload-area {
+        border: 3px dashed rgba(212, 175, 55, 0.3);
+        border-radius: 20px;
+        padding: 3rem;
+        text-align: center;
+        cursor: pointer;
+        transition: var(--transition);
+        margin: 2rem 0;
+        background: rgba(255, 255, 255, 0.02);
+        position: relative;
+        overflow: hidden;
+    }
+
+    .file-upload-area:hover {
+        border-color: var(--accent);
+        background: rgba(212, 175, 55, 0.05);
+        transform: scale(1.01);
+    }
+
+    .file-upload-area.dragover {
+        border-color: var(--emerald);
+        background: rgba(26, 188, 156, 0.1);
+        animation: pulse 0.5s ease-in-out;
+    }
+
+    @keyframes pulse {
+        0%, 100% { transform: scale(1); }
+        50% { transform: scale(1.02); }
+    }
+
+    .upload-icon {
+        font-size: 4rem;
+        color: var(--accent);
+        margin-bottom: 1.5rem;
+        animation: bounce 2s ease-in-out infinite;
+    }
+
+    @keyframes bounce {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-10px); }
+    }
+
+    /* Progress Bar */
+    .progress-container {
+        margin: 2rem 0;
+        display: none;
+    }
+
+    .progress-bar {
+        height: 8px;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 4px;
+        overflow: hidden;
+        margin-bottom: 1rem;
+        position: relative;
+    }
+
+    .progress-fill {
+        height: 100%;
+        width: 0%;
+        background: var(--gradient);
+        border-radius: 4px;
+        transition: width 0.4s ease;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .progress-fill::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(90deg, 
+            transparent, 
+            rgba(255, 255, 255, 0.4), 
+            transparent
+        );
+        animation: shimmer 2s infinite;
+    }
+
+    @keyframes shimmer {
+        0% { transform: translateX(-100%); }
+        100% { transform: translateX(100%); }
+    }
+
+    /* Floating Elements */
+    .floating-element {
+        position: absolute;
+        background: var(--gradient);
+        border-radius: 50%;
+        filter: blur(40px);
+        opacity: 0.1;
+        z-index: -1;
+        animation: floatAround 20s linear infinite;
+    }
+
+    @keyframes floatAround {
+        0% {
+            transform: translate(0, 0) rotate(0deg);
+        }
+        25% {
+            transform: translate(100px, -100px) rotate(90deg);
+        }
+        50% {
+            transform: translate(200px, 0) rotate(180deg);
+        }
+        75% {
+            transform: translate(100px, 100px) rotate(270deg);
+        }
+        100% {
+            transform: translate(0, 0) rotate(360deg);
+        }
+    }
+
+    /* Footer */
+    footer {
+        background: linear-gradient(180deg, var(--primary) 0%, #0a141e 100%);
+        padding: 4rem 0 2rem;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .footer-content {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 3rem;
+        margin-bottom: 3rem;
+    }
+
+    .footer-section h3 {
+        color: var(--accent);
+        margin-bottom: 1.5rem;
+        font-size: 1.5rem;
+        position: relative;
+        display: inline-block;
+    }
+
+    .footer-section h3::after {
+        content: '';
+        position: absolute;
+        bottom: -5px;
+        right: 0;
+        width: 50px;
+        height: 2px;
+        background: var(--gradient);
+    }
+
+    .social-links {
+        display: flex;
+        gap: 1rem;
+        margin-top: 1.5rem;
+    }
+
+    .social-link {
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.05);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--text);
+        text-decoration: none;
+        transition: var(--transition);
+        border: 1px solid rgba(212, 175, 55, 0.1);
+    }
+
+    .social-link:hover {
+        background: var(--gradient);
+        color: #000;
+        transform: translateY(-3px) rotate(5deg);
+        border-color: transparent;
+    }
+
+    .copyright {
+        text-align: center;
+        padding-top: 2rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        color: var(--text-secondary);
+        font-size: 0.9rem;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+        .hero-title {
+            font-size: 2.5rem;
+        }
+        
+        .nav-links {
+            display: none;
+        }
+        
+        .card-grid {
+            grid-template-columns: 1fr;
+        }
+        
+        .form-container {
+            padding: 2rem;
+        }
+        
+        .cta-buttons {
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .btn {
+            width: 100%;
+            max-width: 300px;
+            justify-content: center;
+        }
+        
+        .verse-text {
+            font-size: 1.8rem;
+        }
+    }
+
+    /* Mobile Menu Button */
+    .mobile-menu-btn {
+        display: none;
+        background: none;
+        border: none;
+        color: var(--text);
+        font-size: 1.5rem;
+        cursor: pointer;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.1);
+        transition: var(--transition);
+    }
+
+    .mobile-menu-btn:hover {
+        background: rgba(212, 175, 55, 0.2);
+        transform: rotate(90deg);
+    }
+
+    @media (max-width: 768px) {
+        .mobile-menu-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .nav-links {
+            position: fixed;
+            top: 80px;
+            right: -100%;
+            width: 300px;
+            height: calc(100vh - 80px);
+            background: rgba(12, 25, 36, 0.98);
+            backdrop-filter: blur(20px);
+            flex-direction: column;
+            padding: 2rem;
+            transition: 0.5s ease;
+            border-left: 1px solid rgba(212, 175, 55, 0.2);
+            z-index: 1000;
+        }
+        
+        .nav-links.active {
+            right: 0;
+        }
+        
+        .nav-links li {
+            width: 100%;
+        }
+        
+        .nav-links a {
+            width: 100%;
+            text-align: center;
+            padding: 1rem;
+            border-radius: 15px;
+            margin-bottom: 0.5rem;
+        }
+    }
+
+    /* Loading Animation */
+    .loading {
+        display: inline-block;
+        width: 25px;
+        height: 25px;
+        border: 3px solid rgba(255,255,255,0.3);
+        border-radius: 50%;
+        border-top-color: var(--accent);
+        animation: spin 1s ease-in-out infinite;
+    }
+
+    @keyframes spin {
+        to { transform: rotate(360deg); }
+    }
+
+    /* Success Animation */
+    .success-check {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        background: var(--gradient);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 2rem;
+        animation: checkPop 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+
+    @keyframes checkPop {
+        0% {
+            transform: scale(0);
+            opacity: 0;
+        }
+        70% {
+            transform: scale(1.2);
+        }
+        100% {
+            transform: scale(1);
+            opacity: 1;
+        }
+    }
+    </style>
+</head>
+
+<body>
+    <!-- Floating Particles -->
+    <div class="particles" id="particles"></div>
+
+    <!-- Floating Elements -->
+    <div class="floating-element" style="width: 300px; height: 300px; top: 10%; left: 10%;"></div>
+    <div class="floating-element" style="width: 200px; height: 200px; top: 60%; right: 15%; animation-delay: -10s;"></div>
+    <div class="floating-element" style="width: 150px; height: 150px; bottom: 20%; left: 20%; animation-delay: -5s;"></div>
+
+    <!-- Header -->
+    <header id="mainHeader">
+        <div class="container">
+            <div class="nav-container">
+                <a href="#" class="logo">
+                    <div class="logo-icon">🌙</div>
+                    <div class="logo-text">مسابقة القرآن</div>
+                </a>
+
+                <nav>
+                    <ul class="nav-links" id="navLinks">
+                        <li><a href="#home" class="active">الرئيسية</a></li>
+                        <li><a href="#about">عن المسابقة</a></li>
+                        <li><a href="#rules">الشروط</a></li>
+                        <li><a href="#submit">تقديم التلاوة</a></li>
+                        <li><a href="#contact">التواصل</a></li>
+                    </ul>
+                </nav>
+
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">مسابقة التلاوة القرآنية العالمية</h1>
+                <p class="hero-subtitle">
+                    انطلق في رحلة الإبداع القرآني وأظهر موهبتك في تلاوة كتاب الله. 
+                    مسابقة دولية تجمع بين أصوات المبدعين من كل أنحاء العالم.
+                </p>
+                
+                <div class="cta-buttons">
+                    <a href="#submit" class="btn btn-primary">
+                        <i class="fas fa-upload"></i>
+                        ابدأ المشاركة الآن
+                    </a>
+                    <a href="#about" class="btn btn-secondary">
+                        <i class="fas fa-play-circle"></i>
+                        تعرف على المسابقة
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quran Verse -->
+    <section class="quran-section">
+        <div class="container">
+            <div class="quran-verse">
+                <div class="verse-text">وَرَتِّلِ الْقُرْآنَ تَرْتِيلًا</div>
+                <div class="verse-reference">سورة المزمل - الآية 4</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section" id="about">
+        <div class="container">
+            <h2 class="section-title">عن المسابقة</h2>
+            <div class="card-grid">
+                <div class="card">
+                    <div class="card-icon">🎯</div>
+                    <h3>تحكيم متخصص</h3>
+                    <p>تحكيم من قبل نخبة من القراء المتخصصين بمعايير دقيقة وشفافة</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">🏆</div>
+                    <h3>جوائز قيمة</h3>
+                    <p>جوائز مالية وعينية وشهادات معتمدة للتميز والإبداع</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">🌍</div>
+                    <h3>نطاق عالمي</h3>
+                    <p>مشاركة من جميع أنحاء العالم مع ترتيبات زمنية مناسبة</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">🔒</div>
+                    <h3>خصوصية تامة</h3>
+                    <p>حماية كاملة للبيانات والتسجيلات بمعايير أمنية عالية</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rules Section -->
+    <section class="section" id="rules" style="background: linear-gradient(180deg, var(--secondary) 0%, var(--primary) 100%);">
+        <div class="container">
+            <h2 class="section-title">شروط المسابقة</h2>
+            <div class="card" style="max-width: 800px; margin: 0 auto;">
+                <ul class="rules-list">
+                    <li>المشاركة متاحة للجميع من عمر 10 سنوات فما فوق</li>
+                    <li>المشاركة بتلاوة واحدة فقط لكل متسابق</li>
+                    <li>يجب أن يكون الصوت واضحًا وخاليًا من المؤثرات الصوتية</li>
+                    <li>يمكن رفع ملف صوتي (MP3) أو ملف فيديو (MP4)</li>
+                    <li>التلاوة يجب أن تكون من القرآن الكريم فقط</li>
+                    <li>الالتزام التام بآداب تلاوة القرآن الكريم</li>
+                    <li>أي مخالفة للشروط تؤدي إلى الاستبعاد الفوري</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Submission Form -->
+    <section class="form-section" id="submit">
+        <div class="container">
+            <h2 class="section-title" style="color: var(--accent-light);">تقديم التلاوة</h2>
+            
+            <div class="form-container">
+                <form id="submissionForm">
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 1.5rem;">
+                        <div class="form-group">
+                            <label for="name"><i class="fas fa-user"></i> الاسم الكامل</label>
+                            <input type="text" id="name" class="form-control" placeholder="أدخل اسمك الثلاثي" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="age"><i class="fas fa-birthday-cake"></i> العمر</label>
+                            <input type="number" id="age" class="form-control" placeholder="من 10 إلى 100" min="10" max="100" required>
+                        </div>
+                    </div>
+
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 1.5rem;">
+                        <div class="form-group">
+                            <label for="country"><i class="fas fa-globe"></i> البلد</label>
+                            <input type="text" id="country" class="form-control" placeholder="البلد الذي تعيش فيه" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email"><i class="fas fa-envelope"></i> البريد الإلكتروني</label>
+                            <input type="email" id="email" class="form-control" placeholder="بريدك الإلكتروني للتواصل" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="surah"><i class="fas fa-quran"></i> السورة / الآيات</label>
+                        <input type="text" id="surah" class="form-control" placeholder="مثال: سورة البقرة من الآية ١ إلى ١٠" required>
+                    </div>
+
+                    <!-- File Upload -->
+                    <div class="form-group">
+                        <label><i class="fas fa-file-upload"></i> رفع ملف التلاوة</label>
+                        <div class="file-upload-area" id="fileUploadArea">
+                            <div class="upload-icon">📁</div>
+                            <div style="font-size: 1.2rem; margin-bottom: 0.5rem;">اسحب وأفلت الملف هنا</div>
+                            <div style="color: var(--text-secondary); font-size: 0.9rem;">أو انقر لاختيار ملف</div>
+                            <div style="color: var(--text-secondary); font-size: 0.8rem; margin-top: 1rem;">
+                                MP3, WAV, MP4 - حتى 100 ميجابايت
+                            </div>
+                            <input type="file" id="fileInput" style="display: none;" accept="audio/*,video/*">
+                        </div>
+                        <div id="filePreview"></div>
+                    </div>
+
+                    <!-- Terms -->
+                    <div class="form-group" style="margin-top: 2rem;">
+                        <label style="font-weight: normal; cursor: pointer; display: flex; align-items: flex-start; gap: 10px;">
+                            <input type="checkbox" id="terms" required style="margin-top: 5px;">
+                            <span>أوافق على شروط وأحكام المسابقة وأتعهد بالالتزام بها</span>
+                        </label>
+                    </div>
+
+                    <!-- Progress -->
+                    <div class="progress-container" id="progressContainer">
+                        <div class="progress-bar">
+                            <div class="progress-fill" id="progressFill"></div>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; font-size: 0.9rem; color: var(--text-secondary);">
+                            <span id="progressText">جاري الرفع...</span>
+                            <span id="progressPercent">0%</span>
+                        </div>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <button type="button" class="btn btn-primary" id="submitBtn" style="margin-top: 2rem;">
+                        <span id="btnText">إرسال التلاوة</span>
+                        <span id="btnIcon">🚀</span>
+                    </button>
+
+                    <p style="text-align: center; margin-top: 1.5rem; color: var(--text-secondary); font-size: 0.9rem;">
+                        <i class="fas fa-shield-alt"></i> جميع البيانات محمية ولا يتم مشاركتها مع أي جهة
+                    </p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section" id="contact">
+        <div class="container">
+            <h2 class="section-title">تواصل معنا</h2>
+            <div class="card-grid">
+                <div class="card">
+                    <div class="card-icon">📧</div>
+                    <h3>البريد الإلكتروني</h3>
+                    <p style="direction: ltr; text-align: center; font-family: monospace; color: var(--accent);">
+                        contact@quran-competition.com
+                    </p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">📱</div>
+                    <h3>وسائل التواصل</h3>
+                    <div class="social-links" style="justify-content: center;">
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-telegram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>مسابقة القرآن</h3>
+                    <p style="color: var(--text-secondary);">
+                        مبادرة إسلامية تهدف إلى نشر تلاوة القرآن الكريم الصحيحة
+                        وتشجيع الموهوبين على إظهار إبداعاتهم.
+                    </p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>روابط سريعة</h3>
+                    <ul style="list-style: none;">
+                        <li style="margin-bottom: 0.8rem;"><a href="#home" style="color: var(--text-secondary); text-decoration: none;">🏠 الرئيسية</a></li>
+                        <li style="margin-bottom: 0.8rem;"><a href="#about" style="color: var(--text-secondary); text-decoration: none;">📖 عن المسابقة</a></li>
+                        <li style="margin-bottom: 0.8rem;"><a href="#rules" style="color: var(--text-secondary); text-decoration: none;">📋 الشروط</a></li>
+                        <li><a href="#submit" style="color: var(--text-secondary); text-decoration: none;">🚀 المشاركة</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                © 2024 مسابقة التلاوة القرآنية العالمية | جميع الحقوق محفوظة
+            </div>
+        </div>
+    </footer>
+
+    <script>
+    // ================= INITIALIZATION =================
+    document.addEventListener('DOMContentLoaded', function() {
+        console.log('🌙 Quran Competition Website Loaded');
+        
+        // Create particles
+        createParticles();
+        
+        // Setup animations
+        setupAnimations();
+        
+        // Setup mobile menu
+        setupMobileMenu();
+        
+        // Setup file upload
+        setupFileUpload();
+        
+        // Setup form submission
+        setupFormSubmission();
+        
+        // Setup scroll effects
+        setupScrollEffects();
+        
+        // Initial animations
+        animateOnLoad();
+    });
+
+    // ================= PARTICLES =================
+    function createParticles() {
+        const particlesContainer = document.getElementById('particles');
+        if (!particlesContainer) return;
+        
+        const particleCount = 30;
+        
+        for (let i = 0; i < particleCount; i++) {
+            const particle = document.createElement('div');
+            particle.className = 'particle';
+            
+            // Random size between 2px and 6px
+            const size = Math.random() * 4 + 2;
+            particle.style.width = `${size}px`;
+            particle.style.height = `${size}px`;
+            
+            // Random position
+            particle.style.left = `${Math.random() * 100}%`;
+            
+            // Random animation duration between 15s and 30s
+            const duration = Math.random() * 15 + 15;
+            particle.style.animationDuration = `${duration}s`;
+            
+            // Random animation delay
+            particle.style.animationDelay = `${Math.random() * 5}s`;
+            
+            // Random opacity
+            particle.style.opacity = Math.random() * 0.2 + 0.1;
+            
+            particlesContainer.appendChild(particle);
+        }
+    }
+
+    // ================= ANIMATIONS =================
+    function setupAnimations() {
+        // Animate cards on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+        
+        // Observe all cards
+        document.querySelectorAll('.card').forEach(card => {
+            observer.observe(card);
+        });
+        
+        // Observe form groups
+        document.querySelectorAll('.form-group').forEach(group => {
+            observer.observe(group);
+        });
+    }
+
+    function animateOnLoad() {
+        // Animate hero title
+        const heroTitle = document.querySelector('.hero-title');
+        if (heroTitle) {
+            heroTitle.style.animation = 'titleGlow 3s ease-in-out infinite';
+        }
+        
+        // Animate verse
+        const verse = document.querySelector('.quran-verse');
+        if (verse) {
+            verse.style.animation = 'verseFloat 6s ease-in-out infinite';
+        }
+        
+        // Animate floating elements
+        document.querySelectorAll('.floating-element').forEach((el, index) => {
+            el.style.animationDelay = `-${index * 5}s`;
+        });
+    }
+
+    // ================= MOBILE MENU =================
+    function setupMobileMenu() {
+        const menuBtn = document.getElementById('mobileMenuBtn');
+        const navLinks = document.getElementById('navLinks');
+        
+        if (!menuBtn || !navLinks) return;
+        
+        menuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            menuBtn.innerHTML = navLinks.classList.contains('active') 
+                ? '<i class="fas fa-times"></i>' 
+                : '<i class="fas fa-bars"></i>';
+        });
+        
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!menuBtn.contains(e.target) && !navLinks.contains(e.target)) {
+                navLinks.classList.remove('active');
+                menuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+            }
+        });
+        
+        // Close menu when clicking a link
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                menuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+            });
+        });
+    }
+
+    // ================= FILE UPLOAD =================
+    function setupFileUpload() {
+        const fileUploadArea = document.getElementById('fileUploadArea');
+        const fileInput = document.getElementById('fileInput');
+        const filePreview = document.getElementById('filePreview');
+        
+        if (!fileUploadArea || !fileInput) return;
+        
+        // Click to upload
+        fileUploadArea.addEventListener('click', () => {
+            fileInput.click();
+        });
+        
+        // File input change
+        fileInput.addEventListener('change', handleFileSelect);
+        
+        // Drag and drop
+        ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
+            fileUploadArea.addEventListener(eventName, preventDefaults, false);
+        });
+        
+        function preventDefaults(e) {
+            e.preventDefault();
+            e.stopPropagation();
+        }
+        
+        ['dragenter', 'dragover'].forEach(eventName => {
+            fileUploadArea.addEventListener(eventName, () => {
+                fileUploadArea.classList.add('dragover');
+            });
+        });
+        
+        ['dragleave', 'drop'].forEach(eventName => {
+            fileUploadArea.addEventListener(eventName, () => {
+                fileUploadArea.classList.remove('dragover');
+            });
+        });
+        
+        fileUploadArea.addEventListener('drop', handleDrop);
+        
+        function handleDrop(e) {
+            const files = e.dataTransfer.files;
+            if (files.length > 0) {
+                fileInput.files = files;
+                handleFileSelect({ target: fileInput });
+            }
+        }
+    }
+
+    function handleFileSelect(e) {
+        const file = e.target.files[0];
+        if (!file) return;
+        
+        // Validate file size (100MB max)
+        if (file.size > 100 * 1024 * 1024) {
+            showMessage('حجم الملف كبير جداً! الحد الأقصى 100 ميجابايت', 'error');
+            e.target.value = '';
+            return;
+        }
+        
+        // Validate file type
+        const allowedTypes = ['audio/mpeg', 'audio/wav', 'audio/mp3', 'video/mp4', 'video/quicktime'];
+        const allowedExtensions = /\.(mp3|wav|m4a|mp4|mov|avi)$/i;
+        
+        if (!allowedTypes.includes(file.type) && !file.name.match(allowedExtensions)) {
+            showMessage('نوع الملف غير مدعوم. الرجاء رفع ملف صوتي أو فيديو', 'error');
+            e.target.value = '';
+            return;
+        }
+        
+        // Show preview
+        showFilePreview(file);
+        showMessage('تم تحميل الملف بنجاح', 'success');
+    }
+
+    function showFilePreview(file) {
+        const preview = document.getElementById('filePreview');
+        if (!preview) return;
+        
+        preview.innerHTML = `
+            <div style="
+                background: rgba(255,255,255,0.05);
+                padding: 1.2rem;
+                border-radius: 15px;
+                margin-top: 1rem;
+                display: flex;
+                align-items: center;
+                gap: 1rem;
+                animation: fadeInUp 0.5s ease;
+            ">
+                <div style="color: var(--accent); font-size: 1.5rem;">
+                    ${file.type.includes('audio') ? '🎵' : '🎬'}
+                </div>
+                <div style="flex: 1;">
+                    <div style="font-weight: bold; margin-bottom: 0.3rem;">${file.name}</div>
+                    <div style="color: var(--text-secondary); font-size: 0.9rem;">
+                        ${formatFileSize(file.size)} • ${file.type}
+                    </div>
+                </div>
+                <button onclick="removeFile()" style="
+                    background: none;
+                    border: none;
+                    color: #e74c3c;
+                    cursor: pointer;
+                    padding: 0.5rem;
+                    border-radius: 50%;
+                    transition: all 0.3s;
+                " onmouseover="this.style.background='rgba(231,76,60,0.1)'" 
+                onmouseout="this.style.background='none'">
+                    ✕
+                </button>
+            </div>
+        `;
+    }
+
+    function removeFile() {
+        const fileInput = document.getElementById('fileInput');
+        const preview = document.getElementById('filePreview');
+        
+        if (fileInput) fileInput.value = '';
+        if (preview) preview.innerHTML = '';
+        
+        showMessage('تمت إزالة الملف', 'success');
+    }
+
+    function formatFileSize(bytes) {
+        if (bytes === 0) return '0 بايت';
+        const k = 1024;
+        const sizes = ['بايت', 'كيلوبايت', 'ميجابايت', 'جيجابايت'];
+        const i = Math.floor(Math.log(bytes) / Math.log(k));
+        return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i];
+    }
+
+    // ================= FORM SUBMISSION =================
+    function setupFormSubmission() {
+        const submitBtn = document.getElementById('submitBtn');
+        if (!submitBtn) return;
+        
+        submitBtn.addEventListener('click', handleSubmit);
+        
+        // Auto-save form data
+        const formInputs = document.querySelectorAll('#submissionForm input, #submissionForm textarea');
+        formInputs.forEach(input => {
+            input.addEventListener('input', saveFormData);
+        });
+        
+        // Load saved data
+        loadSavedData();
+    }
+
+    function validateForm() {
+        const name = document.getElementById('name').value.trim();
+        const age = document.getElementById('age').value;
+        const country = document.getElementById('country').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const surah = document.getElementById('surah').value.trim();
+        const fileInput = document.getElementById('fileInput');
+        const terms = document.getElementById('terms').checked;
+        
+        // Validate name
+        if (!name || name.length < 3) {
+            showMessage('الرجاء إدخال اسم صحيح (3 أحرف على الأقل)', 'error');
+            return false;
+        }
+        
+        // Validate age
+        const ageNum = parseInt(age);
+        if (!age || isNaN(ageNum) || ageNum < 10 || ageNum > 100) {
+            showMessage('الرجاء إدخال عمر صحيح (بين 10 و 100 سنة)', 'error');
+            return false;
+        }
+        
+        // Validate country
+        if (!country || country.length < 2) {
+            showMessage('الرجاء إدخال البلد', 'error');
+            return false;
+        }
+        
+        // Validate email
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!email || !emailRegex.test(email)) {
+            showMessage('الرجاء إدخال بريد إلكتروني صحيح', 'error');
+            return false;
+        }
+        
+        // Validate surah
+        if (!surah || surah.length < 3) {
+            showMessage('الرجاء تحديد السورة أو الآيات', 'error');
+            return false;
+        }
+        
+        // Validate file
+        if (!fileInput.files.length) {
+            showMessage('الرجاء رفع ملف التلاوة', 'error');
+            return false;
+        }
+        
+        // Validate terms
+        if (!terms) {
+            showMessage('الرجاء الموافقة على الشروط والأحكام', 'error');
+            return false;
+        }
+        
+        return true;
+    }
+
+    async function handleSubmit() {
+        if (!validateForm()) return;
+        
+        const submitBtn = document.getElementById('submitBtn');
+        const btnText = document.getElementById('btnText');
+        const btnIcon = document.getElementById('btnIcon');
+        const progressContainer = document.getElementById('progressContainer');
+        const progressFill = document.getElementById('progressFill');
+        const progressText = document.getElementById('progressText');
+        const progressPercent = document.getElementById('progressPercent');
+        
+        // Disable button and show progress
+        submitBtn.disabled = true;
+        btnText.textContent = 'جاري الإرسال...';
+        btnIcon.innerHTML = '<div class="loading"></div>';
+        progressContainer.style.display = 'block';
+        
+        try {
+            // Simulate upload process
+            await simulateUpload(progressFill, progressPercent, progressText);
+            
+            // Show success
+            progressFill.style.width = '100%';
+            progressPercent.textContent = '100%';
+            progressText.textContent = 'تم الإرسال بنجاح!';
+            
+            // Show success animation
+            showSuccessAnimation();
+            
+            // Reset form after delay
+            setTimeout(() => {
+                resetForm();
+                progressContainer.style.display = 'none';
+                progressFill.style.width = '0%';
+                progressPercent.textContent = '0%';
+                progressText.textContent = 'جاري الرفع...';
+                
+                submitBtn.disabled = false;
+                btnText.textContent = 'إرسال التلاوة';
+                btnIcon.textContent = '🚀';
+            }, 3000);
+            
+        } catch (error) {
+            console.error('Submission error:', error);
+            showMessage('حدث خطأ أثناء الإرسال. الرجاء المحاولة مرة أخرى', 'error');
+            
+            // Reset button state
+            progressContainer.style.display = 'none';
+            submitBtn.disabled = false;
+            btnText.textContent = 'إرسال التلاوة';
+            btnIcon.textContent = '🚀';
+        }
+    }
+
+    async function simulateUpload(progressFill, progressPercent, progressText) {
+        return new Promise((resolve) => {
+            let progress = 0;
+            const interval = setInterval(() => {
+                progress += Math.random() * 10 + 5;
+                if (progress > 100) progress = 100;
+                
+                progressFill.style.width = progress + '%';
+                progressPercent.textContent = Math.round(progress) + '%';
+                
+                if (progress >= 30) progressText.textContent = 'جاري تحميل الملف...';
+                if (progress >= 60) progressText.textContent = 'جاري رفع الملف...';
+                if (progress >= 85) progressText.textContent = 'جاري حفظ البيانات...';
+                
+                if (progress >= 100) {
+                    clearInterval(interval);
+                    setTimeout(resolve, 500);
+                }
+            }, 200);
+        });
+    }
+
+    function showSuccessAnimation() {
+        // Create success overlay
+        const overlay = document.createElement('div');
+        overlay.style.cssText = `
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(12, 25, 36, 0.95);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            opacity: 0;
+            animation: fadeIn 0.5s ease forwards;
+        `;
+        
+        overlay.innerHTML = `
+            <div style="text-align: center; transform: scale(0.8); animation: scaleUp 0.5s ease 0.2s forwards;">
+                <div class="success-check">
+                    <i class="fas fa-check" style="color: #000; font-size: 1.5rem;"></i>
+                </div>
+                <h3 style="color: var(--accent); font-size: 2rem; margin-bottom: 1rem;">تم الإرسال بنجاح!</h3>
+                <p style="color: var(--text-secondary); max-width: 400px; margin: 0 auto;">
+                    تم إرسال تلاوتك بنجاح. سنتواصل معك قريباً عبر البريد الإلكتروني
+                </p>
+            </div>
+        `;
+        
+        document.body.appendChild(overlay);
+        
+        // Remove overlay after 3 seconds
+        setTimeout(() => {
+            overlay.style.animation = 'fadeOut 0.5s ease forwards';
+            setTimeout(() => {
+                document.body.removeChild(overlay);
+            }, 500);
+        }, 3000);
+    }
+
+    function resetForm() {
+        document.getElementById('submissionForm').reset();
+        document.getElementById('filePreview').innerHTML = '';
+        localStorage.removeItem('quranFormData');
+    }
+
+    // ================= DATA MANAGEMENT =================
+    function saveFormData() {
+        const formData = {
+            name: document.getElementById('name').value,
+            age: document.getElementById('age').value,
+            country: document.getElementById('country').value,
+            email: document.getElementById('email').value,
+            surah: document.getElementById('surah').value
+        };
+        
+        localStorage.setItem('quranFormData', JSON.stringify(formData));
+    }
+
+    function loadSavedData() {
+        const savedData = localStorage.getItem('quranFormData');
+        if (savedData) {
+            try {
+                const data = JSON.parse(savedData);
+                
+                if (data.name) document.getElementById('name').value = data.name;
+                if (data.age) document.getElementById('age').value = data.age;
+                if (data.country) document.getElementById('country').value = data.country;
+                if (data.email) document.getElementById('email').value = data.email;
+                if (data.surah) document.getElementById('surah').value = data.surah;
+                
+                showMessage('تم استعادة البيانات المحفوظة', 'success');
+            } catch (error) {
+                console.error('Error loading saved data:', error);
+            }
+        }
+    }
+
+    // ================= MESSAGES =================
+    function showMessage(text, type = 'info') {
+        // Remove existing message
+        const existingMessage = document.querySelector('.message-popup');
+        if (existingMessage) {
+            existingMessage.remove();
+        }
+        
+        // Create new message
+        const message = document.createElement('div');
+        message.className = 'message-popup';
+        message.innerHTML = `
+            <div style="
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                background: ${type === 'error' ? 'rgba(231, 76, 60, 0.9)' : 'rgba(26, 188, 156, 0.9)'};
+                color: white;
+                padding: 1rem 1.5rem;
+                border-radius: 10px;
+                backdrop-filter: blur(10px);
+                box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+                z-index: 10000;
+                transform: translateX(100%);
+                animation: slideInRight 0.5s ease forwards, slideOutRight 0.5s ease 4.5s forwards;
+            ">
+                <div style="display: flex; align-items: center; gap: 10px;">
+                    <i class="fas ${type === 'error' ? 'fa-exclamation-circle' : 'fa-check-circle'}"></i>
+                    <span>${text}</span>
+                </div>
+            </div>
+        `;
+        
+        document.body.appendChild(message);
+        
+        // Auto remove after 5 seconds
+        setTimeout(() => {
+            if (message.parentNode) {
+                message.remove();
+            }
+        }, 5000);
+    }
+
+    // ================= SCROLL EFFECTS =================
+    function setupScrollEffects() {
+        // Header scroll effect
+        const header = document.getElementById('mainHeader');
+        
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 100) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+            
+            // Update active nav link
+            updateActiveNavLink();
+        });
+        
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    // Update active nav link
+                    document.querySelectorAll('.nav-links a').forEach(link => {
+                        link.classList.remove('active');
+                    });
+                    this.classList.add('active');
+                    
+                    // Scroll to target
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 100,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    }
+
+    function updateActiveNavLink() {
+        const sections = document.querySelectorAll('section[id]');
+        const navLinks = document.querySelectorAll('.nav-links a');
+        
+        let current = '';
+        const scrollPosition = window.scrollY + 150;
+        
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.clientHeight;
+            
+            if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+                current = section.getAttribute('id');
+            }
+        });
+        
+        navLinks.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href') === `#${current}`) {
+                link.classList.add('active');
+            }
+        });
+    }
+
+    // ================= KEYBOARD SHORTCUTS =================
+    document.addEventListener('keydown', (e) => {
+        // Ctrl/Cmd + S to save
+        if ((e.ctrlKey || e.metaKey) && e.key === 's') {
+            e.preventDefault();
+            saveFormData();
+            showMessage('تم حفظ البيانات تلقائياً', 'success');
+        }
+        
+        // Escape to close mobile menu
+        if (e.key === 'Escape') {
+            const navLinks = document.getElementById('navLinks');
+            const menuBtn = document.getElementById('mobileMenuBtn');
+            
+            if (navLinks && navLinks.classList.contains('active')) {
+                navLinks.classList.remove('active');
+                menuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+            }
+        }
+    });
+
+    // ================= PAGE TRANSITIONS =================
+    document.querySelectorAll('a').forEach(link => {
+        if (link.href && link.href.includes('#') && link.href !== window.location.href.split('#')[0]) {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                
+                // Add fade out effect
+                document.body.style.opacity = '0.8';
+                document.body.style.transition = 'opacity 0.3s ease';
+                
+                setTimeout(() => {
+                    window.location.href = link.href;
+                }, 300);
+            });
+        }
+    });
+
+    // ================= PERFORMANCE OPTIMIZATION =================
+    // Lazy load images (if any)
+    if ('IntersectionObserver' in window) {
+        const imageObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const img = entry.target;
+                    img.src = img.dataset.src;
+                    img.classList.add('loaded');
+                    imageObserver.unobserve(img);
+                }
+            });
+        });
+        
+        document.querySelectorAll('img[data-src]').forEach(img => {
+            imageObserver.observe(img);
+        });
+    }
+
+    // ================= INITIAL ANIMATIONS =================
+    // Animate elements on load
+    setTimeout(() => {
+        document.body.style.opacity = '1';
+        document.body.style.transition = 'opacity 1s ease';
+        
+        // Add CSS animations
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes fadeIn {
+                from { opacity: 0; }
+                to { opacity: 1; }
+            }
+            
+            @keyframes fadeOut {
+                from { opacity: 1; }
+                to { opacity: 0; }
+            }
+            
+            @keyframes scaleUp {
+                from { transform: scale(0.8); }
+                to { transform: scale(1); }
+            }
+            
+            @keyframes slideInRight {
+                from { transform: translateX(100%); }
+                to { transform: translateX(0); }
+            }
+            
+            @keyframes slideOutRight {
+                from { transform: translateX(0); }
+                to { transform: translateX(100%); }
+            }
+        `;
+        document.head.appendChild(style);
+    }, 100);
+    </script>
+</body>
+</html>
